@@ -4,6 +4,8 @@ from rest_framework.permissions import AllowAny, IsAdminUser
 from rest_framework.generics import (
     ListAPIView,
     CreateAPIView,
+    RetrieveAPIView,
+    UpdateAPIView,
     RetrieveUpdateDestroyAPIView
 )
 
@@ -19,7 +21,14 @@ class InfoCreateApiView(CreateAPIView):
     serializer_class = InfoSerializer
     permission_classes = [IsAdminUser, ]
 
-class InfoDetailUpdateDeleteApiView(RetrieveUpdateDestroyAPIView):
+
+class InfoDetailApiView(RetrieveAPIView):
+    queryset = Info.objects.all()
+    serializer_class = InfoSerializer
+    permission_classes = [AllowAny, ]
+
+
+class InfoEditApiView(RetrieveUpdateDestroyAPIView):
     queryset = Info.objects.all()
     serializer_class = InfoSerializer
     permission_classes = [IsAdminUser, ]
