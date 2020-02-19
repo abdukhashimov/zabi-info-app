@@ -14,7 +14,7 @@ SECRET_KEY = '8%kd-^v2+g-_m0)0^ddsos28@spo=_0vyu_gdw((vh5y-w@j)$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1', 'zabi-zabi.herokuapp.com',]
 
 
 # Application definition
