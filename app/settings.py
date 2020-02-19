@@ -14,7 +14,7 @@ SECRET_KEY = '8%kd-^v2+g-_m0)0^ddsos28@spo=_0vyu_gdw((vh5y-w@j)$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1', 'zabi-zabi.herokuapp.com',]
+ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1', 'zabi-zabi.herokuapp.com', ]
 
 
 # Application definition
@@ -28,13 +28,19 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # third-party
     'rest_framework',
+    'corsheaders',
     # end of the t-p
     # custom installed apps
     'info.apps.InfoConfig',
     # end of the custom installed apps
 ]
 
+CORS_ORIGIN_ALLOW_ALL = True
+
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.BrokenLinkEmailsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
