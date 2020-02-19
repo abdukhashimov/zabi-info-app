@@ -25,6 +25,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # third-party
+    'rest_framework',
+    # end of the t-p
     # custom installed apps
     'info.apps.InfoConfig',
     # end of the custom installed apps
